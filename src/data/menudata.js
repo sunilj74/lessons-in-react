@@ -17,6 +17,20 @@ export const MENUDATA: Array<MenuType> = [
         text: 'Render Props',
         sourcePath: 'src/components/RenderProps.js',
         description: 'The term “render prop” refers to a technique for sharing code between React components using a prop whose value is a function. A component with a render prop takes a function that returns a React element and calls it instead of implementing its own render logic.'
+    },
+    {
+        name: 'form',
+        path: '/form',
+        text: 'Form',
+        sourcePath: 'src/components/MyForm.js',
+        description: 'The term “render prop” refers to a technique for sharing code between React components using a prop whose value is a function. A component with a render prop takes a function that returns a React element and calls it instead of implementing its own render logic.'
+    },
+    {
+        name: 'reffield',
+        path: '/reffield',
+        text: 'RefField',
+        sourcePath: 'src/components/RefField.js',
+        description: 'The term “render prop” refers to a technique for sharing code between React components using a prop whose value is a function. A component with a render prop takes a function that returns a React element and calls it instead of implementing its own render logic.'
     }
 ];
 

@@ -21,7 +21,8 @@ const LI = styled.li`
   font-size: larger;
   background-color:#888;
   border-bottom: 1px solid #aaa;
-  margin-right: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
 `;
 
 const Anchor = styled(Link)`
@@ -58,6 +59,7 @@ const SideBar = styled.div`
   flex-wrap: wrap;
   align-items: top;
   align-content: start;
+  max-width: 450px;
   background-color: #999;
   padding: 10px 5px;
 `;
@@ -85,8 +87,18 @@ class Layout extends React.Component<{}> {
           <SideBar>
             <Menu menuItems={MENUDATA}></Menu>
             <SourceButton text="Redux" path="src/store/reduxstore.js" />
-            <SourceButton text="Redux-Component" path="src/components/SourceCode.js" />
-            <SourceButton text="Jest" path="src/components/__tests__/SourceButton.test.js" />
+            <SourceButton
+              text="Redux-Component"
+              path="src/components/SourceCode.js"
+            />
+            <SourceButton
+              text="Jest"
+              path="src/components/__tests__/SourceButton.test.js"
+            />
+            <SourceButton
+              text="UseForm"
+              path="src/lib/useForm.js"
+            />
             <Playground />
           </SideBar>
           <Source>

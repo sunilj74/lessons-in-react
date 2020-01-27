@@ -4,11 +4,13 @@ import { useDispatch } from 'react-redux';
 import { getSourceCodeAction } from '../store/reduxstore';
 
 const Button4Source = styled.button`
-    padding: 10px;
-    background-color: darkgrey;
-    font-size: 14px;
-    color: darkred;
-    cursor: pointer;
+  padding: 10px;
+  background-color: darkgrey;
+  font-size: 14px;
+  color: darkred;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-bottom: 10px;
 `;
 
 export const SourceButton = ({text, path}) => {
