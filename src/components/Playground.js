@@ -1,6 +1,6 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
-import {HOC} from './HOC';
+import HOC from './HOC';
 import {RenderProps} from './RenderProps';
 
 const Playground = (props: any) => {
@@ -13,7 +13,6 @@ const Playground = (props: any) => {
                 <Route path="/renderprops">
                     <RenderProps />
                 </Route>
-
             </Switch>
         </>
     );

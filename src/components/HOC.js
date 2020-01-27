@@ -1,5 +1,7 @@
 import * as React from "react";
+import { connect } from "react-redux";
 import styled from "styled-components";
+import {getSourceCodeAction} from '../store/reduxstore';
 
 export const withLocalStorage = (ComponentToWrap: any) => {
   const saveKey = (key, value) => {
@@ -59,11 +61,29 @@ export const Note = (props: any) => {
 
 export const NoteWithStorage = withLocalStorage(Note);
 
-export const HOC = (props: any) => {
-  return (
-    <div style={{width: '100%'}}>
-      <Note name="withoutStorage" title='This Note is NOT SAVED' />
-      <NoteWithStorage name="withStorage" title='This Note is SAVED' />
-    </div>
-  );
+class HOC extends React.Component {
+  componentDidMount() {
+    this.props.getSourceCode('src/components/HOC.js');
+  }
+
+  render() {
+    return (
+      <div style={{width: '100%'}}>
+        <Note name="withoutStorage" title='This Note is NOT SAVED' />
+        <NoteWithStorage name="withStorage" title='This Note is SAVED' />
+      </div>
+    );
+  }
 };
+
+const mapStateToProps = (state) => {
+  return {};
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getSourceCode: (path) => dispatch(getSourceCodeAction(path))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HOC);

@@ -1,8 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import styled from "styled-components";
+import { Link, useParams } from 'react-router-dom';
 import { Playground } from "./Playground";
 import { MENUDATA } from '../data/menudata';
+import SourceCode from './SourceCode';
+
 
 const UL = styled.ul`
   list-style-type: none;
@@ -77,7 +79,9 @@ class Layout extends React.Component<{}> {
           <Panel>
             <Playground />
           </Panel>
-          <Source/>
+          <Source>
+            <SourceCode/>
+          </Source>
         </LayoutContainer>
       );
 

@@ -1,14 +1,17 @@
 import * as React from 'react';
+import {useSelector, useDispatch} from 'react-redux';
 import styled from "styled-components";
+import { getSourceCodeAction } from '../store/reduxstore';
 
 const Panel = styled.div`
+  width: 100%;
   margin: 10px;
   padding: 10px;
 `;
 
 const PanelInner = styled.div`
   height: 300px;
-  width: 600px;
+  width: 100%;
   border-top-style: solid;
   border-top-width: 3px;
 `;
@@ -26,7 +29,7 @@ export const MouseTracker = (props) => {
   const [posY, setPosY] = React.useState(0);
   return (
     <Panel>
-      <div>
+      <div className='stretched'>
         <span>X: {posX}</span>&nbsp;
                 <span>Y: {posY}</span>
       </div>
@@ -38,11 +41,15 @@ export const MouseTracker = (props) => {
 };
 
 export const  RenderProps = () => {
+    const dispatch = useDispatch();
+    React.useEffect(()=>{
+      dispatch(getSourceCodeAction('src/components/RenderProps.js'))
+
+    }, []);
     return (
-      <div>
+      <div className='stretched'>
         <MouseTracker render={() => <PanelGreen/>} />
         <MouseTracker render={() => <PanelPink/>} />
       </div>
     );
-
 };
