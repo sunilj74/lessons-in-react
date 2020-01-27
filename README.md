@@ -75,4 +75,9 @@ yarn add --dev flow-bin
 yarn add react-router-dom
 yarn add styled-components
 yarn add redux react-redux redux-saga
-yarn add --dev react-test-renderer
+yarn add --dev @testing-library/react @testing-library/jest-dom react-test-renderer
+
+yarn test
+yarn start
+yarn flow
+

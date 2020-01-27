@@ -10,7 +10,7 @@ const Panel = styled.div`
 `;
 
 const PanelInner = styled.div`
-  height: 300px;
+  height: 100px;
   width: 100%;
   border-top-style: solid;
   border-top-width: 3px;

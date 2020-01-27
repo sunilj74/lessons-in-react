@@ -4,23 +4,29 @@ import { Link, useParams } from 'react-router-dom';
 import { Playground } from "./Playground";
 import { MENUDATA } from '../data/menudata';
 import SourceCode from './SourceCode';
+import { SourceButton } from './SourceButton';
 
 
 const UL = styled.ul`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   list-style-type: none;
-  padding: 5px;
+  padding: 0px;
+  margin: 0px;
 `;
 
 const LI = styled.li`
-  padding: 10px 20px;
+  padding: 10px;
   font-size: larger;
   background-color:#888;
   border-bottom: 1px solid #aaa;
+  margin-right: 5px;
 `;
 
 const Anchor = styled(Link)`
   text-decoration: none;
-  font-size: 20px;
+  font-size: 14px;
   color: black;
 `;
 
@@ -48,7 +54,10 @@ const LayoutContainer = styled.div`
 
 const SideBar = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: top;
+  align-content: start;
   background-color: #999;
   padding: 10px 5px;
 `;
@@ -75,12 +84,13 @@ class Layout extends React.Component<{}> {
         <LayoutContainer>
           <SideBar>
             <Menu menuItems={MENUDATA}></Menu>
-          </SideBar>
-          <Panel>
+            <SourceButton text="Redux" path="src/store/reduxstore.js" />
+            <SourceButton text="Redux-Component" path="src/components/SourceCode.js" />
+            <SourceButton text="Jest" path="src/components/__tests__/SourceButton.test.js" />
             <Playground />
-          </Panel>
+          </SideBar>
           <Source>
-            <SourceCode/>
+            <SourceCode />
           </Source>
         </LayoutContainer>
       );
